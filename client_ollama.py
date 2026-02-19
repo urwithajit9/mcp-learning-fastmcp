@@ -63,7 +63,8 @@ async def main():
         print(f"  - {tool['function']['name']}: {tool['function']['description']}")
     print()
 
-    user_msg = "Please greet John and then add 150 + 75."
+    #user_msg = "Please greet John and then add 150 + 75."
+    user_msg = "Tell the current weather of Seoul, South Korea and next 10 days prediction"
     print(f"User: {user_msg}\n")
 
     # First call to model
