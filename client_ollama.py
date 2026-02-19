@@ -64,7 +64,7 @@ async def main():
     print()
 
     #user_msg = "Please greet John and then add 150 + 75."
-    user_msg = "Tell the current weather of Seoul, South Korea and next 10 days prediction"
+    user_msg = "Tell the current weather of Seoul, South Korea and next 10 days prediction. Format output in table and nice ascii graph. Make it interesting with nice emoji"
     print(f"User: {user_msg}\n")
 
     # First call to model
