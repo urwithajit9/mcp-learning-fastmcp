@@ -270,3 +270,59 @@ Weather Condition: Light Rain
 
 Note: The temperature graph is a simple ASCII representation and may not accurately represent the actual temperature fluctuations.
 ```
+
+# Output : System health
+
+```txt
+🤖 Final Response:
+The provided JSON data seems to be a partial log file from a system monitoring tool like Prometheus or Grafana, but with some inconsistencies in the formatting and structure.
+
+However, if we ignore the formatting issues and focus on extracting meaningful information, here's what we can infer:
+
+**System Information:**
+
+* Operating System: Not explicitly mentioned
+* CPU Usage: Not available (missing data)
+* Memory Usage: Not available (missing data)
+
+**Service Statuses:**
+
+* `/snap/snapd/25577`: Up
+* `/snap/snapd/25935`: Up
+
+**Disk Usage:**
+
+* `/snap/snapd/25577`:
+        + Total Space: 100% used (1.23 GB)
+        + Available Space: Not available
+* `/snap/snapd/25935`:
+        + Total Space: 100% used (1.23 GB)
+        + Available Space: Not available
+
+**Network Traffic:**
+
+* Not available (missing data)
+
+**Other Services:**
+
+* `/var/snap/firefox/common/host-hunspell`: Up (with 76% of total space used, leaving 24% free)
+
+Note that some fields are missing or have inconsistent formatting, which might be due to the log file b
+```
+
+```bash
+(myenv) ajit@ajitmegaproject:~/Documents/mcp-fastmcp-agenticAI$ python client_ollama2.py
+🔧 Loading tools from MCP server...
+   Loaded 3 tools: ['get_system_health', 'check_service_url', 'get_top_processes']
+
+👤 User: My system feels slow. What's using the most resources right now?
+
+🔨 Calling tool: get_top_processes
+   Arguments: {'limit': '10'}
+   Result: CallToolResult(content=[TextContent(type='text', text='{"top_processes":[{"pid":1,"name":"systemd","cpu_percent":0.0,"memory_percent":0.0},{"pid":2,"name":"kthreadd","cpu_percent":0.0,"memory_percent":0.0},{"pid":3,"name":"pool_workqueue_release","cpu_percent":0.0,"memory_percent":0.0},{"pid":4,"name":"kworker/R-rcu_gp","cpu_percent":0.0,"memory_percent":0.0},{"pid":5,"name":"kworker/R-sync_wq","cpu_percent":0.0,"memory_percent":0.0},{"pid":6,"name":"kworker/R-kvfree_rcu_reclaim","cpu_percent":0.0,"memory_percent":0.0},{"pid":7,"name":"kworker/R-slub_flushwq","cpu_percent":0.0,"memory_percent":0.0},{"pid":8,"name":"kworker/R-netns","cpu_percent":0.0,"memory_percent":0.0},{"pid":10,"name":"kworker/0:0H-events_highpri","cpu_percent":0.0,"memory_percent":0.0},{"pid":13,"name":"kworker/R-mm_percpu_wq","cpu_percent":0.0,"memory_percent":0.0}],"limit":10}', annotations=None, meta=None)], structured_content={'top_processes': [{'pid': 1, 'name': 'systemd', 'cpu_percent': 0.0, 'memory_percent': 0.0}, {'pid': 2, 'name': 'kthreadd', 'cpu_percent': 0.0, 'memory_percent': 0.0}, {'pid': 3, 'name': 'pool_workqueue_release', 'cpu_percent': 0.0, 'memory_percent': 0.0}, {'pid': 4, 'name': 'kworker/R-rcu_gp', 'cpu_percent': 0.0, 'memory_percent': 0.0}, {'pid': 5, 'name': 'kworker/R-sync_wq', 'cpu_percent': 0.0, 'memory_percent': 0.0}, {'pid': 6, 'name': 'kworker/R-kvfree_rcu_reclaim', 'cpu_percent': 0.0, 'memory_percent': 0.0}, {'pid': 7, 'name': 'kworker/R-slub_flushwq', 'cpu_percent': 0.0, 'memory_percent': 0.0}, {'pid': 8, 'name': 'kworker/R-netns', 'cpu_percent': 0.0, 'memory_percent': 0.0}, {'pid': 10, 'name': 'kworker/0:0H-events_highpri', 'cpu_percent': 0.0, 'memory_percent': 0.0}, {'pid': 13, 'name': 'kworker/R-mm_percpu_wq', 'cpu_percent': 0.0, 'memory_percent': 0.0}], 'limit': 10}, meta=None, data={'top_processes': [{'pid': 1, 'name': 'systemd', 'cpu_percent': 0.0, 'memory_percent': 0.0}, {'pid': 2, 'name': 'kthreadd', 'cpu_percent': 0.0, 'memory_percent': 0.0}, {'pid': 3, 'name': 'pool_workqueue_release', 'cpu_percent': 0.0, 'memory_percent': 0.0}, {'pid': 4, 'name': 'kworker/R-rcu_gp', 'cpu_percent': 0.0, 'memory_percent': 0.0}, {'pid': 5, 'name': 'kworker/R-sync_wq', 'cpu_percent': 0.0, 'memory_percent': 0.0}, {'pid': 6, 'name': 'kworker/R-kvfree_rcu_reclaim', 'cpu_percent': 0.0, 'memory_percent': 0.0}, {'pid': 7, 'name': 'kworker/R-slub_flushwq', 'cpu_percent': 0.0, 'memory_percent': 0.0}, {'pid': 8, 'name': 'kworker/R-netns', 'cpu_percent': 0.0, 'memory_percent': 0.0}, {'pid': 10, 'name': 'kworker/0:0H-events_highpri', 'cpu_percent': 0.0, 'memory_percent': 0.0}, {'pid': 13, 'name': 'kworker/R-mm_percpu_wq', 'cpu_percent': 0.0, 'memory_percent': 0.0}], 'limit': 10}, is_error=False)
+
+🤖 Final Response:
+The process using the most resources right now is "systemd" with a CPU usage of 0.0% and a memory usage of 0.0%. However, please note that this information may not be entirely accurate or up-to-date, as it's based on current system state at the time of retrieval.
+
+If you want to get more detailed information about resource usage for each process, you can use tools like "ps" command with "-eo" option, which stands for "extended output".
+```
